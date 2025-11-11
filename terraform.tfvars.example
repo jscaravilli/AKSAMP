@@ -1,0 +1,81 @@
+# ===============================================================================
+# Example Terraform Variables File
+# ===============================================================================
+# Copy this file to terraform.tfvars and customize for your environment
+# cp terraform.tfvars.example terraform.tfvars
+
+# ===============================================================================
+# Basic Configuration
+# ===============================================================================
+
+prefix   = "demo-aks"
+location = "eastus2"
+
+tags = {
+  Environment = "Demo"
+  Project     = "AKS-Prometheus-Example"
+  Owner       = "DevOps-Team"
+  Purpose     = "Learning"
+}
+
+# ===============================================================================
+# Network Configuration
+# ===============================================================================
+
+# vnet_address_space                     = ["10.1.0.0/16"]
+# aks_subnet_address_prefix              = "10.1.1.0/24"
+# private_endpoint_subnet_address_prefix = "10.1.2.0/24"
+# vm_subnet_address_prefix               = "10.1.3.0/24"
+# bastion_subnet_address_prefix          = "10.1.4.0/26"
+
+# ===============================================================================
+# AKS Configuration
+# ===============================================================================
+
+# kubernetes_version = "1.31"
+# aks_sku_tier       = "Standard"  # Standard or Premium (required for private clusters)
+# node_vm_size       = "Standard_D2s_v3"
+# node_min_count     = 2
+# node_max_count     = 5
+# node_os_disk_size_gb = 128  # Minimum 128GB recommended for ama-metrics
+
+# Kubernetes Service Configuration
+# aks_service_cidr   = "10.2.0.0/16"
+# aks_dns_service_ip = "10.2.0.10"
+
+# ===============================================================================
+# Monitoring Configuration
+# ===============================================================================
+
+# log_analytics_sku             = "PerGB2018"
+# log_analytics_retention_days  = 30
+# ampls_ingestion_access_mode   = "PrivateOnly"  # PrivateOnly or Open
+# ampls_query_access_mode       = "PrivateOnly"  # PrivateOnly or Open
+
+# ===============================================================================
+# VM Configuration
+# ===============================================================================
+
+# vm_admin_username  = "azureuser"
+# vm_admin_password  = "P@ssw0rd1234!"  # Change this in production!
+# vm_size            = "Standard_D2s_v3"
+# vm_os_disk_size_gb = 128
+
+# ===============================================================================
+# Bastion Configuration (costs ~$140/month)
+# ===============================================================================
+
+# enable_bastion = true   # Set to false to disable Bastion and save costs
+# bastion_sku    = "Basic"  # Basic or Standard
+
+# ===============================================================================
+# Notes
+# ===============================================================================
+# 
+# - All values shown are defaults from variables.tf
+# - Uncomment and modify any value you want to change
+# - Private cluster requires Standard or Premium SKU
+# - Bastion costs approximately $140/month even when idle
+# - For production, use stronger passwords and store in Azure Key Vault
+# - Node pool requires minimum 2 nodes and 128GB disk for ama-metrics
+#

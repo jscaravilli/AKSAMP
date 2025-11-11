@@ -1,6 +1,28 @@
 # Fully Private AKS with Azure Monitor Workspace (Prometheus)
 
+[![GitHub](https://img.shields.io/badge/GitHub-jscaravilli%2FAKTAMP-blue?logo=github)](https://github.com/jscaravilli/AKSAMP)
+[![Terraform](https://img.shields.io/badge/Terraform-%3E%3D1.5.0-623CE4?logo=terraform)](https://www.terraform.io/)
+[![Azure](https://img.shields.io/badge/Azure-eastus2-0078D4?logo=microsoftazure)](https://portal.azure.com)
+
 This Terraform configuration demonstrates a **production-ready, fully private AKS cluster** with Azure Monitor Workspace for Prometheus metrics collection, accessed entirely through private endpoints.
+
+## Quick Deploy
+
+### Prerequisites
+- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) installed and authenticated (`az login`)
+- [Terraform](https://www.terraform.io/downloads) >= 1.5.0
+- Active Azure subscription
+
+### Deploy in 3 Commands
+```bash
+git clone https://github.com/jscaravilli/AKSAMP.git
+cd AKSAMP
+terraform init && terraform apply
+```
+
+**Deployment time:** ~15-20 minutes
+
+> **Cost Note:** This deployment includes Azure Bastion (~$140/month). You can disable it by setting `enable_bastion = false` in `terraform.tfvars`.
 
 ## Architecture Overview
 

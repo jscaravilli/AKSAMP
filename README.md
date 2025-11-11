@@ -9,9 +9,35 @@ This Terraform configuration demonstrates a **production-ready, fully private AK
 ## Quick Deploy
 
 ### Prerequisites
-- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) installed and authenticated (`az login`)
+- [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) installed
 - [Terraform](https://www.terraform.io/downloads) >= 1.5.0
-- Active Azure subscription
+- Active Azure subscription with appropriate permissions (Contributor or Owner role)
+
+### Before You Deploy
+
+**1. Authenticate with Azure**
+```bash
+az login
+```
+
+**2. Select Your Subscription**
+
+List your subscriptions:
+```bash
+az account list --output table
+```
+
+Set the subscription you want to use:
+```bash
+az account set --subscription "Your-Subscription-Name-or-ID"
+```
+
+Verify the correct subscription is selected:
+```bash
+az account show --output table
+```
+
+> ⚠️ **Important:** Terraform will deploy to whichever subscription is currently selected in Azure CLI. Always verify before running `terraform apply`.
 
 ### Deploy in 3 Commands
 ```bash

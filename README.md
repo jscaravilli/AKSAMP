@@ -4,7 +4,7 @@
 [![Terraform](https://img.shields.io/badge/Terraform-%3E%3D1.5.0-623CE4?logo=terraform)](https://www.terraform.io/)
 [![Azure](https://img.shields.io/badge/Azure-eastus2-0078D4?logo=microsoftazure)](https://portal.azure.com)
 
-This Terraform configuration demonstrates a **production-ready, fully private AKS cluster** with Azure Monitor Workspace for Prometheus metrics collection, accessed entirely through private endpoints.
+This Terraform configuration demonstrates a **production-ready, fully private AKS cluster** with Azure Monitor Workspace for Prometheus metrics collection, accessed entirely through private endpoints. It deploys a VM and Bastion (optional) for accessing the private workspace.
 
 ## Quick Deploy
 
